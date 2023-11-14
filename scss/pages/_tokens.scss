@@ -1,0 +1,184 @@
+.tokenspage {
+    // Tokens Section
+    .tokens {
+        --pb-section: 120px;
+        padding-bottom: var(--pb-section);
+
+        // Textbox
+        .textbox {
+            max-width: 568px;
+            margin-bottom: 101px;
+
+            .heading {
+                margin-bottom: 16px;
+            }
+        }
+
+        // Table
+        &__table {
+            display: flex;
+            
+            &-name,
+            &-desc {
+                width: 25%;
+            }
+            
+            &-market,
+            &-volume {
+                width: 20%;
+            }
+            
+            &-website {
+                width: 10%;
+            }
+            
+            .title {
+                display: flex;
+                align-items: center;
+                height: 99px;
+                border-bottom: 1px solid var(--gray-color);
+                @include text(
+                    var(--white-color),
+                    db,
+                    var(--fs-title-tokens),
+                    var(--lh-title-tokens),
+                    var(--ls-title-tokens),
+                    uppercase
+                )
+            }
+
+            .data-cell {
+                display: flex;
+                align-items: center;
+                height: 133px;
+                border-bottom: 1px solid var(--gray-color);
+            }
+
+            // Name
+            &-name {
+                .name-list {
+                    &__item {
+                        gap: 16px;
+
+                        &-text {
+                            @include text(
+                                var(--white-color),
+                                db,
+                                var(--fs-name-tokens),
+                                var(--lh-name-tokens),
+                                var(--ls-name-tokens)
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Website
+            &-website {
+                .website-list {
+                    &__item {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        // Responsive
+        @include xs {
+            --pb-sectionL: 80px;
+
+            // Textbox
+            .textbox {
+                max-width: 100%;
+                margin-bottom: 48px;
+            }
+
+            // Table
+            &__table {
+                flex-direction: column;
+
+                .title,
+                .data-cell {
+                    height: initial;
+                    border: initial;
+                }
+
+                .title {
+                    margin-bottom: 16px;
+                }
+
+                // Name
+                &-name {
+                    width: 100%;
+                    padding: 32px 0;
+                    border-bottom: 1px solid var(--gray-color);
+                    .name-list {
+                        &__item {
+                            &:not(:first-child) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                // Desc
+                &-desc {
+                    width: 100%;
+                    padding: 32px 0;
+                    border-bottom: 1px solid var(--gray-color);
+                    .desc-list {
+                        &__item {
+                            padding-right: 100px;
+                            &:not(:first-child) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+
+                // Market
+                &-market {
+                    width: 100%;
+                    padding: 32px 0;
+                    border-bottom: 1px solid var(--gray-color);
+                    .market-list {
+                        &__item {
+                            &:not(:first-child) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                // Volume
+                &-volume {
+                    width: 100%;
+                    padding: 32px 0;
+                    border-bottom: 1px solid var(--gray-color);
+                    .volume-list {
+                        &__item {
+                            &:not(:first-child) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                // Website
+                &-website {
+                    width: 100%;
+                    padding: 32px 0;
+                    border-bottom: 1px solid var(--gray-color);
+                    .website-list {
+                        &__item {
+                            &:not(:first-child) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

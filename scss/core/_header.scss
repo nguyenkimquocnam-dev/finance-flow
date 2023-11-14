@@ -1,0 +1,105 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 799;
+    width: 100%;
+    height: var(--height-header);
+    @include transition(var(--transition-duration));
+
+    &.--bg-blue {
+        background-color: var(--blue-light-color);
+    }
+
+    &.--bg-transparent {
+        background-color: transparent;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__nav {
+        --lr: 32px;
+        display: flex;
+        align-items: center;
+
+        &-logo {
+            position: relative;
+            display: flex;
+            padding-right: var(--lr);
+            flex-shrink: 0;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        &-humburger {
+            position: relative;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            @include size(45px, 45px, true);
+            background-color: var(--main-color);
+            cursor: pointer;
+
+            // Button Menu Mobile When Close
+            &.--close {
+                    &::before {
+                        @include transform(rotate(-45deg) translate(-7px, 7px));
+                    }
+                    &::after {
+                        @include transform(rotate(45deg) translate(-6px, -6px));
+                    }
+                    span {
+                        opacity: 0;
+                    }
+            }
+            
+            &::before,
+            &::after,
+            span {
+                position: absolute;
+                content: "";
+                display: block;
+                @include size(25px, 2px);
+                background-color: var(--white-color);
+                @include transition(var(--transition-duration));
+                opacity: 1;
+            }
+
+            &::before {
+                top: 12px;
+            }
+
+            &::after {
+                bottom: 12px;
+            }
+
+
+            
+        }
+    }
+
+    @include sm {
+        &__right {
+            .btn {
+                display: none;
+            }
+            &-humburger {
+                display: flex;
+            }
+        }
+
+        &__nav {
+            .menu {
+                display: none;
+            }
+        }
+    }
+}

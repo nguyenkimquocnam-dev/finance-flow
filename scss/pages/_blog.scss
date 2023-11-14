@@ -1,0 +1,123 @@
+.blogpage {
+    // Blog Section
+    .blog {
+        --pb-section: 92px;
+        padding-bottom: var(--pb-section);
+        
+        // Textbox
+        .textbox {
+            margin-bottom: 48px;
+            .desc {
+                max-width: 568px;
+            }
+        }
+
+        // Responsive
+        @include sm {
+            // Textbox
+            .textbox {
+                .desc {
+                    max-width: 428px;
+                }
+            }
+        }
+
+        @include xs {
+            // Textbox
+            .textbox {
+                flex-direction: column;
+                align-items: initial;
+                justify-content: initial;
+                margin-bottom: 47px;
+                .heading {
+                    margin-bottom: 16px;
+                }
+                .desc {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    // Lastest Section
+    .lastest {
+        --pt-section: 156px;
+        --pb-section: 80px;
+        padding: var(--pt-section) 0 var(--pb-section) 0;
+
+        .textbox {
+            margin-bottom: 56px;
+        }
+
+        // Pagination
+        &__content {
+            &-list {
+                display: none;
+                
+                &.--active {
+                    display: grid;
+                }
+            }
+            &-pagination {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 24px;
+
+                li {
+                    cursor: pointer;
+                    padding: 0 12px;
+                    .number {
+                        display: block;
+                        @include transition(var(--transition-duration));
+                        
+                        &.--active {
+                            color: var(--main-color);
+                        }
+                    }
+
+                    &:hover {
+                        .number {
+                            color: var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Responsive
+        @include sm {
+            &__content {
+                &-list {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+        @include xs {
+            --pt-section: 80px;
+            // Textbox
+            .textbox {
+                flex-direction: column;
+                margin-bottom: 24px;
+                .heading {
+                    margin-bottom: 24px;
+                }
+            }
+
+            // Content
+            &__content {
+                // List Post
+                &-list {
+                    grid-template-columns: 1fr;
+                    gap: 16px;
+                }
+
+                // Pagination
+                &-pagination {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

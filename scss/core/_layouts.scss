@@ -1,0 +1,55 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    @include sm {
+        font-size: 57.5%;
+    }
+
+    @include xs {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    width: 100%;
+    max-width: var(--max-width-page);
+    margin: auto;
+    overflow-x: hidden;
+    background-color: var(--blue-dark-color);
+    @include text(
+        var(--white-color),
+        dr,
+        var(--fs-body),
+        var(--lh-body),
+        var(--ls-body)
+    );
+    &.--disable-scroll {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        max-width: var(--max-width-container);
+        padding-left: var(--pd-container);
+        padding-right: var(--pd-container);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main {
+        padding-top: 178px;
+        overflow: clip;
+        &.--home {
+            padding-top: initial;
+        }
+
+        @include xs {
+            padding-top: initial;
+            section:first-child {
+                padding-top: 122px;
+            }
+        }
+    }
+}

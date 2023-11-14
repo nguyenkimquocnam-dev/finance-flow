@@ -1,0 +1,189 @@
+:root {
+    // -------------------------------------- Colors ---------------------------------------------
+    --main-color: #0328EE;
+    --white-color: #FFFFFF;
+    --blue-dark-color: #010725;
+    --blue-light-color: #00116A;
+    --gray-color: rgba(255, 255, 255, 0.1);
+    --gray-light-color: rgba(255, 255, 255, 0.40);
+    --gray-light-half-color: rgba(255, 255, 255, 0.5);
+    --red-color: #EE0303;
+
+    // -------------------------------------- Page Settings --------------------------------------
+    --max-width-page: 2560px;
+
+    // -------------------------------------- Container ------------------------------------------
+    --gap: 26px;
+    --pd-container: 28px;
+    --width-container: 1198px;
+    --max-width-container: calc(var(--width-container) + (var(--pd-container) * 2));
+
+    // -------------------------------------- Typography -----------------------------------------
+
+    --fs-h1: 6.6rem;
+    --lh-h1: 8rem;
+    --ls-h1: -0.1rem;
+
+    --fs-h2: 4.2rem;
+    --lh-h2: 5.5rem;
+    --ls-h2: 0rem;
+
+    --fs-label: 1.8rem;
+    --lh-label: 2.6rem;
+    --ls-label: 0.09rem;
+
+    --fs-h3: 2.2rem;
+    --lh-h3: 3.1rem;
+    --ls-h3: 0rem;
+
+    --fs-text-button: 1.6rem;
+    --lh-text-button: 1.6rem;
+    --ls-text-button: 0.16rem;
+
+    --fs-body: 1.8rem;
+    --lh-body: 3.2rem;
+    --ls-body: 0rem;
+
+    --fs-body-small: 1.6rem;
+    --lh-body-small: 2.6rem;
+    --ls-body-small: 0rem;
+
+    --fs-text-menu: 1.4rem;
+    --lh-text-menu: 1.6rem;
+    --ls-text-menu: 0.14rem;
+
+    --fs-text-menu-mobile: 2.6rem;
+    --lh-text-menu-mobile: 1rem;
+
+    --fs-text-menu-footer: 1.4rem;
+    --lh-text-menu-footer: 1.6rem;
+    --ls-text-menu-footer: 0.14rem;
+
+    --fs-label-footer: 1.8rem;
+    --lh-label-footer: 2.6rem;
+    --ls-label-footer: 0.09rem;
+
+    --fs-text-tag: 1.4rem;
+    --lh-text-tag: 1.8rem;
+    --ls-text-tag: 0.07rem;
+
+    --fs-author: 1.6rem;
+    --lh-author: 1.8rem;
+    --ls-author: 0.08rem;
+
+    --fs-year-timeline: 2.8rem;
+    --lh-year-timeline: 3rem;
+    --ls-year-timeline: 0.028rem;
+
+    --fs-label-post-item: 2.8rem;
+    --lh-label-post-item: 4rem;
+    --ls-label-post-item: 0.028rem;
+
+    --fs-text-form: 1.8rem;
+    --lh-text-form: 2.7rem;
+    --ls-text-form: 0rem;
+
+    --fs-title-accordion: 2.8rem;
+    --lh-title-accordion: 3rem;
+    --ls-title-accordion: 0.028rem;
+
+    --fs-title-404: 18rem;
+    --lh-title-404: 16rem;
+    --ls-title-404: 0rem;
+
+    --fs-title-tokens: 1.6rem;
+    --lh-title-tokens: 1.8rem;
+    --ls-title-tokens: 0.1rem;
+
+    --fs-name-tokens: 1.8rem;
+    --lh-name-tokens: 2rem;
+    --ls-name-tokens: 0rem;
+
+    --fs-tag-small: 1.2rem;
+    --lh-tag-small: 1.2rem;
+    --ls-tag-small: 0.06rem;
+
+    --fs-h3-blog-detail: 2.8rem;
+    --lh-h3-blog-detail: 3rem;
+    --ls-h3-blog-detail: 0.028rem;
+
+    --fs-blockquote: 2.2rem;
+    --lh-blockquote: 3.8rem;
+    --ls-blockquote: normal;
+
+    // -------------------------------------- Header ---------------------------------------------
+    --height-header: 100px;
+
+    // -------------------------------------- Transition -----------------------------------------
+    --transition-duration: 0.3s;
+    --timing-function: cubic-bezier(.57, .21, .69, 1.25);
+
+    // -------------------------------------- Buttons --------------------------------------------
+    --height-button-main: 70px;
+    --height-button-main-md: 64px;
+    --height-button-main-small: 56px;
+    --border-radius-button-main: 80px;
+
+    // -------------------------------------- Tags -----------------------------------------------
+    --height-tag: 36px;
+    --height-tag-small: 26px;
+
+    // -------------------------------------- Tabs -----------------------------------------------
+    --height-tab: 40px;
+    --border-radius-tab: 80px;
+    
+    // -------------------------------------- Responsive -----------------------------------------
+    @include md {
+        --width-container: 1140px;
+    }
+
+    @include sm {
+        --width-container: 960px;
+    }
+
+    @include xs {
+        // Container
+        --max-width-container: 100%;
+        --pd-container: 15px;
+        
+        // Typography
+        --fs-h1: 3.8rem;
+        --lh-h1: 4.6rem;
+
+        --fs-h2: 2.8rem;
+        --lh-h2: 3.6rem;
+
+        --fs-label: 1.4rem;
+        --lh-label: 1.8rem;
+        --ls-label: 0.07rem;
+
+        --fs-body: 1.6rem;
+        --lh-body: 2.6rem;
+
+        --fs-text-menu: 3.2rem;
+        --lh-text-menu: 0.1rem;
+
+        --lh-year-timeline: 2.5rem;
+        --ls-year-timeline: 0rem;
+
+        --fs-title-accordion: 1.8rem;
+
+        --fs-title-404: 12rem;
+        --lh-title-404: 12rem;
+
+        --ls-title-tokens: 0.02rem;
+
+        --fs-blockquote: 1.6rem;
+        --lh-blockquote: 2.6rem;
+
+        --fs-h3-blog-detail: 2.4rem;
+        --lh-h3-blog-detail: 3.2rem;
+        --ls-h3-blog-detail: 0rem;
+        
+        // Header
+        --height-header: 73px;
+
+        // Tabs
+        --height-tab: 48px;
+    }
+}

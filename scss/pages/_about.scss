@@ -1,0 +1,362 @@
+.aboutpage {
+
+    // About Section
+    .about {
+        position: relative;
+        --pb-section: 234px;
+        padding-bottom: var(--pb-section);
+
+        // Textbox
+        .textbox {
+            &.--center {
+                margin-bottom: 77px;
+                max-width: 615px;
+
+                .heading {
+                    margin-bottom: 21px;
+                }
+
+                .desc {
+                    max-width: 606px;
+                }
+            }
+        }
+
+        // Content
+        &__content {
+            .textbox {
+                margin-bottom: 25px;
+
+                .desc {
+                    max-width: 496px;
+                }
+            }
+
+            // Card Item
+            .card {
+                display: flex;
+                gap: 24px;
+                padding: 58px 32px;
+
+                // Icon
+                .icon {
+                    flex-shrink: 0;
+                }
+
+                .content {
+                    .heading {
+                        margin-bottom: 9px;
+                    }
+                }
+            }
+        }
+
+        // Blur
+        .blur {
+            top: 50%;
+        }
+
+        // Responsive
+        // Phone
+        @include xs {
+            --pb-section: 44px;
+
+            // Textbox
+            .textbox {
+                &.--center {
+                    max-width: 100%;
+                    margin-bottom: 48px;
+
+                    .heading {
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+
+            // Content
+            &__content {
+                .textbox {
+                    display: block;
+                    margin-bottom: 16px;
+
+                    .heading {
+                        max-width: 266px;
+                        margin-bottom: 14px;
+                    }
+
+                    .desc {
+                        max-width: 100%;
+                    }
+                }
+
+                &-list {
+                    grid-template-columns: 1fr;
+                    gap: 16px;
+
+                    .card {
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            // Blur
+            .blur {
+                img {
+                    max-width: initial;
+                }
+            }
+        }
+    }
+
+    // Mission Section
+    .mission {
+        position: relative;
+        --pb-section: 181px;
+        padding-bottom: var(--pb-section);
+
+        .container {
+            @include grid(12, var(--gap));
+            align-items: start;
+        }
+
+        // Content
+        &__content {
+            grid-column: 1/8;
+            padding-right: 76px;
+
+            // Item Content
+            &-item {
+                .heading {
+                    margin-bottom: 18px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 80px;
+                }
+            }
+        }
+
+        // Image
+        &__img {
+            grid-column: 8/13;
+            display: flex;
+
+            img {
+                max-width: initial;
+            }
+        }
+
+        // Responsive
+        // Phone
+        @include xs {
+            --pb-section: 80px;
+
+            .container {
+                display: block;
+            }
+
+            // Content
+            &__content {
+                padding-right: initial;
+                margin-bottom: 64px;
+
+                // Item
+                &-item {
+                    .heading {
+                        margin-bottom: 16px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 81px;
+                    }
+                }
+            }
+
+            // Image
+            &__img {
+                img {
+                    // max-width: 394px;
+                    @include mid-img;
+                }
+            }
+        }
+    }
+
+    // Timeline Section
+    .timeline {
+        --pb-section: 132px;
+        padding-bottom: var(--pb-section);
+
+        .container {
+            @include grid(12, var(--gap));
+        }
+
+        // Textbox
+        .textbox {
+            position: sticky;
+            position: -o-sticky;
+            position: -webkit-sticky;
+            top: calc(var(--height-header) + 10px);
+            grid-column: 1/5;
+            height: fit-content;
+            .heading {
+                margin-bottom: 18px;
+            }
+        }
+
+        // List
+        &__list {
+            grid-column: 6/13;
+
+            // Item
+            &-item {
+                position: relative;
+                padding: 0 0 40px 79px;
+                border-bottom: 1px solid var(--white-color);
+
+                &:not(:last-child) {
+                    margin-bottom: 80px;
+                }
+
+                // Circle Mark
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    content: "";
+                    display: block;
+                    @include size(24px, 24px, true);
+                    background-color: var(--white-color);
+                }
+
+                .year {
+                    font-family: db;
+                    font-size: var(--fs-year-timeline);
+                    line-height: var(--lh-year-timeline);
+                    letter-spacing: var(--ls-year-timeline);
+                    margin-bottom: 18px;
+                }
+
+                .heading {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+
+        // Responsive
+        @include xs {
+            --pb-section: 114px;
+
+            .container {
+                display: block;
+            }
+
+            .textbox {
+                position: initial;
+                margin-bottom: 38px;
+
+                .heading {
+                    margin-bottom: 14px;
+                }
+            }
+
+            &__list {
+                &-item {
+                    &:not(:last-child) {
+                        margin-bottom: 56px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Team Section
+    .team {
+        --pb-section: 127px;
+        padding-bottom: var(--pb-section);
+        .textbox {
+            margin-bottom: 48px;
+            .desc {
+                max-width: 496px;
+            }
+        }
+
+        &__list {
+            .card {
+                padding: 24px;
+                // Thumbnail
+                .thumb {
+                    display: flex;
+                    width: 100%;
+                    border-radius: 32px;
+                    margin-bottom: 32px;
+                    overflow: hidden;
+                    aspect-ratio: 327/400;
+                    img {
+                        @include mid-img;
+                    }
+                }
+                // Information
+                .info {
+                    font-size: var(--fs-author);
+                    line-height: var(--lh-author);
+                    letter-spacing: var(--ls-author);
+                    text-transform: uppercase;
+                    &__name {
+                        margin-bottom: 12px;
+                        font-family: db;
+                    }
+                }
+            }
+        }
+
+        // Responsive
+        @include xs {
+            .textbox {
+                flex-direction: column;
+                align-items: initial;
+                justify-content: initial;
+                margin-bottom: 27px;
+                .heading  {
+                    margin-bottom: 14px;
+                }
+                .desc {
+                    max-width: 100%;
+                }
+            }
+
+            &__list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    }
+
+    // Investors Section
+    .investors {
+        --pb-section: 230px;
+        padding-bottom: var(--pb-section);
+
+        // Textbox
+        .textbox {
+            max-width: 496px;
+            margin-bottom: 41px;
+            text-align: center;
+            .heading {
+                margin-bottom: 14px;
+            }
+        }
+
+        // Responsive
+        @include xs {
+            --pb-section: 80px;
+            .textbox {
+                max-width: 100%;
+                margin-bottom: 48px;
+                .heading {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}

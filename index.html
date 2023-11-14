@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | FinanceFlow</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="">
+
+    <!-- Meta tags -->
+    <meta name="title" content="FinanceFlow - CFD Circle" />
+    <meta name="description" 
+        content="FinanceFlow là dự án được hoàn thành trong khóa học lập trình front-end Web Responsive tại CFD Circle">
+    <meta name="keywords" content>
+    <meta name="author" content="Nguyễn Kim Quốc Nam">
+
+    <!-- Meta tags Facebook -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến" />
+    <meta property="og:description"
+        content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle" />
+    <meta property="og:url" content="https://cfdcircle.vn" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <meta property="og:image" content="imgs/thumb-facebook.jpg" />
+
+    <!-- Meta tags Twitter -->
+    <meta name="twitter:card" content/>
+    <meta name="twitter:site" content/>
+    <meta name="twitter:title" content="FinanceFlow" />
+    <meta name="twitter:description" 
+        content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle" />
+    <meta name="twitter:image" content/>
+
+    <!-- CSS Loading -->
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 800;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--blue-dark-color);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .loading.--hide {
+            opacity: 0;
+            pointer-events: none;
+             transition: var(--transition-duration);
+            -webkit-transition: var(--transition-duration);
+            -moz-transition: var(--transition-duration);
+            -o-transition: var(--transition-duration);
+            -ms-transition: var(--transition-duration);
+        }
+
+        .loading .loading__inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 13px;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .loading .loading__inner .loading__inner-progressbar {
+            width: 160px;
+            height: 4px;
+            margin-bottom: 13px;
+            border-radius: 100px;
+            background-color: var(--main-color);
+            overflow: hidden;
+        }
+
+        .loading .loading__inner .loading__inner-progressbar .value {
+            display: block;
+            width: 0%;
+            height: 100%;
+            background-color: var(--white-color);
+        }
+
+        .loading .loading__inner .loading__inner-percent {
+            font-family: db;
+            font-size: 1.6rem;
+            line-height: 0.1rem;
+            letter-spacing: normal;
+        }
+
+        @media screen and (max-width: 767.98px) {
+            .loading .loading__inner .loading__inner-progressbar {
+                width: 129px;
+            }
+        }
+    </style>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+</head>
+<body class="homepage --disable-scroll scrollbar">
+    <!-- Loading -->
+    <div class="loading">
+        <div class="loading__inner">
+            <div class="loading__inner-progressbar">
+                <span class="value"></span>
+            </div>
+            <span class="loading__inner-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progressbar">
+        <span class="progressbar__inner"></span>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__nav">
+                <a href="./" class="header__nav-logo">
+                    <img src="imgs/logo-financeflow.svg" alt="logo-financeflow">
+                </a>
+                <ul class="menu">
+                    <li><a href="./" class="--active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="tokens.html">Tokens</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="header__right">
+                <a href="https://cfdcircle.vn/" target="_blank" class="btn --main --small">
+                    Download App
+                </a>
+                <div class="header__right-humburger --hidden">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <ul class="menu --mobile">
+                <li><a href="./" class="--active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="tokens.html">Tokens</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <a href="https://cfdcircle.vn/" target="_blank" class="btn --main --small">
+                Download App
+            </a>
+        </div>
+        <div class="blur --mid">
+            <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+        </div>
+    </nav>
+
+    <main class="main --home">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="textbox">
+                    <h1 class="heading --h1 wow animate__fadeInUp" data-wow-duration="1s">Buy, trade, and hold 350+ cryptocurrencies</h1>
+                    <p class="desc wow animate__fadeInUp" data-wow-duration="1s">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aenean dis placerat.
+                    </p>
+                    <div class="btn-group wow animate__fadeInUp" data-wow-duration="1s">
+                        <a class="btn --main" href="https://cfdcircle.vn/" target="_blank">Download App</a>
+                        <a class="btn --gray" href="pricing.html">view pricing</a>
+                    </div>
+                </div>
+                <div class="hero__planet wow animate__zoomIn" data-wow-duration="1s">
+                    <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+                    <img srcset="imgs/hero-planet.png 2x" alt="hero-planet">
+                </div>
+            </div>
+            <div class="blur --top-left">
+                <img srcset="imgs/blur-dark.png 2x" alt="blur-dark">
+            </div>
+        </section>
+
+        <!-- Partner Section -->
+        <section class="partner">
+            <div class="container">
+                <div class="textbox --center">
+                    <p class="desc wow animate__fadeInUp" data-wow-duration="1s">Finance flow has been featured on</p>
+                </div>
+                <div class="partner-list">
+                    <div class="partner-list__item wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/partner-company-1.svg" alt="partner-company">
+                    </div>
+                    <div class="partner-list__item wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/partner-company-2.svg" alt="partner-company">
+                    </div>
+                    <div class="partner-list__item wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/partner-company-3.svg" alt="partner-company">
+                    </div>
+                    <div class="partner-list__item wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/partner-company-4.svg" alt="partner-company">
+                    </div>
+                    <div class="partner-list__item wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/partner-company-5.svg" alt="partner-company">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Porfolio Section -->
+        <section class="portfolio">
+            <div class="container">
+                <div class="textbox --center wow animate__fadeInUp" data-wow-duration="1s">
+                    <h2 class="heading --h2">Build your crypto portfolio</h2>
+                    <p class="desc --center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.</p>
+                </div>
+                <div class="portfolio__list">
+                    <div class="card wow animate__backInLeft" data-wow-duration="1s">
+                        <div class="icon">
+                            <img src="imgs/icon-exchange.svg" alt="icon-exchange">
+                        </div>
+                        <div class="content">
+                            <h3 class="heading --label">Send & Receive</h3>
+                            <p class="content__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card --main wow animate__backInUp" data-wow-duration="1s">
+                        <div class="content">
+                            <h3 class="heading --label">iOS & Android App</h3>
+                            <p class="content__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In amet, morbi non at sed neque.
+                            </p>
+                        </div>
+                        <div class="img">
+                            <img srcset="imgs/portfolio-iphone14.png 2x" alt="iphone-14">
+                        </div>
+                    </div>
+                    <div class="card wow animate__backInRight" data-wow-duration="1s">
+                        <div class="icon">
+                            <img src="imgs/icon-chart.svg" alt="icon-chart">
+                        </div>
+                        <div class="content">
+                            <h3 class="heading --label">Trading Charts</h3>
+                            <p class="content__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card wow animate__backInLeft" data-wow-duration="1s">
+                        <div class="icon">
+                            <img src="imgs/icon-wallet.svg" alt="icon-wallet">
+                        </div>
+                        <div class="content">
+                            <h3 class="heading --h3">100% Secure Wallet</h3>
+                            <p class="content__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card wow animate__backInRight" data-wow-duration="1s">
+                        <div class="icon">
+                            <img src="imgs/icon-realtime.svg" alt="icon-realtime">
+                        </div>
+                        <div class="content">
+                            <h3 class="heading --h3">Real Time Trading</h3>
+                            <p class="content__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://cfdcircle.vn/" target="_blank" class="btn --main --center wow animate__fadeInUp" data-wow-duration="1s">Download App</a>
+            </div>
+            <div class="blur --top-right">
+                <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+            </div>
+        </section>
+
+        <!-- Tokens Section -->
+        <section class="tokens">
+            <div class="container">
+                <div class="tokens__list">
+                    <div class="tokens__list-item">
+                        <div class="img wow animate__fadeInLeft" data-wow-duration="1s">
+                            <img srcset="imgs/double-iphone14.png 2x" alt="iphone-14">
+                        </div>
+                        <div class="content wow animate__fadeInRight" data-wow-duration="1s">
+                            <div class="textbox">
+                                <h2 class="heading --h2">Earn daily rewards on your idle tokens</h2>
+                                <p class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                                </p>
+                            </div>
+                            <div class="icon-list">
+                                <div class="icon-list__item">
+                                    <div class="icon --small"> 
+                                        <img src="imgs/icon-lowest.svg" alt="icon-lowest">
+                                    </div>
+                                    <span class="text">Lowest fees in market</span>
+                                </div>
+                                <div class="icon-list__item">
+                                    <div class="icon --small">
+                                        <img src="imgs/icon-fast.svg" alt="icon-fast">
+                                    </div>
+                                    <span class="text">Fast and secure transactions</span>
+                                </div>
+                                <div class="icon-list__item">
+                                    <div class="icon --small">
+                                        <img src="imgs/icon-security.svg" alt="icon-security">
+                                    </div>
+                                    <span class="text">256-bit secure encryption</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tokens__list-item">
+                        <div class="img wow animate__fadeInRight" data-wow-duration="1s">
+                            <img src="imgs/apple-computer.svg" alt="apple-computer">
+                        </div>
+                        <div class="content wow animate__fadeInLeft" data-wow-duration="1s">
+                            <div class="textbox">
+                                <h2 class="heading --h2">Earn daily rewards on your idle tokens</h2>
+                                <p class="desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                                </p>
+                            </div>
+                            <div class="icon-list">
+                                <div class="icon-list__item">
+                                    <div class="icon --small">
+                                        <img src="imgs/icon-private.svg" alt="icon-private">
+                                    </div>
+                                    <span class="text">100% Private data</span>
+                                </div>
+                                <div class="icon-list__item">
+                                    <div class="icon --small">
+                                        <img src="imgs/icon-guarantee.svg" alt="icon-guarantee">
+                                    </div>
+                                    <span class="text">99.99% Uptime guarantee</span>
+                                </div>
+                                <div class="icon-list__item">
+                                    <div class="icon --small">
+                                        <img src="imgs/icon-support.svg" alt="icon-support">
+                                    </div>
+                                    <span class="text">24/7 Dedicated support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blur --mid">
+                <img srcset="imgs/blur-dark.png 2x" alt="blur-dark">
+            </div>
+        </section>
+
+        <!-- Explore Section -->
+        <section class="explore">
+            <div class="container">
+                <div class="col-6-6">
+                    <div class="textbox wow animate__fadeInLeft" data-wow-duration="1s">
+                        <h2 class="heading --h2">Explore endless possibilities with FinanceFlow</h2>
+                        <p class="desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Feugiat nulla suspendisse tortor aene.
+                        </p>
+                        <div class="btn-group">
+                            <a href="https://cfdcircle.vn" target="_blank" class="btn --main --white">Download App</a>
+                        </div>
+                    </div>
+                    <picture class="img wow animate__fadeInRight" data-wow-duration="1s">
+                        <source media="(max-width:767.98px)" srcset="imgs/double-iphone-14-mobile.png 2x">
+                        <img srcset="imgs/double-iphone14.png 2x" alt="iphone-14">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <div class="textbox --horizontal">
+                    <h2 class="heading --h2 wow animate__fadeInLeft" data-wow-duration="1s">What our users say?</h2>
+                    <a href="https://cfdcircle.vn/" target="_blank" class="btn --main wow animate__fadeInRight" data-wow-duration="1s">Download App</a>
+                </div>
+            </div>
+            <div class="reviews__wrap wow animate__fadeInUp" data-wow-duration="1s">
+                <div class="reviews__wrap-list">
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-2.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="comment">
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et
+                                pellentesque
+                                egestas
+                                mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”
+                            </p>
+                        </div>
+                        <div class="author">
+                            <div class="author__avatar">
+                                <img src="imgs/avatar-1.jpg" alt="avatar-author">
+                            </div>
+                            <div class="author__info">
+                                <h5 class="author__info-name">John carter</h5>
+                                <p class="author__info-orther">Role, Company</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blur --left-mid">
+                <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video">
+            <div class="container">
+                <div class="video__content wow animate__fadeInLeft" data-wow-duration="1s">
+                    <div class="textbox">
+                        <h2 class="heading --h2">Get started today</h2>
+                        <p class="desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.
+                        </p>
+                    </div>
+                    <div class="video__content-list">
+                        <div class="item">
+                            <div class="icon --small">
+                                <img src="imgs/icon-download.svg" alt="icon-download">
+                            </div>
+                            <span class="text">Download app</span>
+                        </div>
+                        <div class="item">
+                            <div class="icon --small">
+                                <img src="imgs/icon-account.svg" alt="icon-account">
+                            </div>
+                            <span class="text">Create a free account</span>
+                        </div>
+                        <div class="item">
+                            <div class="icon --small">
+                                <img src="imgs/icon-start.svg" alt="icon-start">
+                            </div>
+                            <span class="text">Start trading</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video__popup wow animate__fadeInRight" data-wow-duration="1s" data-id-video="VJ5WoHkrXdI">
+                    <img src="imgs/background-video.jpg" alt="video-popup" class="video__popup-img">
+                    <div class="video__popup-play">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="29" viewBox="0 0 26 29" fill="none">
+                            <path
+                                d="M24.9924 15.5173L2.93246 28.1071C2.26264 28.4894 1.42969 28.0057 1.42969 27.2345V2.05482C1.42969 1.2836 2.26264 0.799911 2.93246 1.18219L24.9924 13.772C25.6681 14.1576 25.6681 15.1317 24.9924 15.5173Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news">
+            <div class="container">
+                <!-- Textbox -->
+                <div class="textbox --horizontal">
+                    <h2 class="heading --h2 wow animate__fadeInLeft" data-wow-duration="1s">Browse our latest news</h2>
+                    <p class="desc wow animate__fadeInRight" data-wow-duration="1s">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet .
+                    </p>
+                </div>
+
+                <!-- Post List -->
+                <div class="news__list col-4">
+                    <figure class="post card wow animate__fadeInUp" data-wow-duration="1s">
+                        <!-- Thumbnail -->
+                        <a href="blog-detail.html" class="post__thumb">
+                            <img src="imgs/post-thumb-1.jpg" alt="post-img">
+                        </a>
+                        <!-- Content -->
+                        <div class="post__content">
+                            <!-- Tag -->
+                            <div class="tag">Products</div>
+                            <!-- Content Detail -->
+                            <div class="post__content-detail">
+                                <h3 class="heading --h3">
+                                    <a href="blog-detail.html">The Basics about Cryptocurrency</a>
+                                </h3>
+                                <p class="desc">
+                                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+                                    Scelerisque viverra donec diammeo.
+                                </p>
+                            </div>
+                            <!-- Author -->
+                            <div class="author">
+                                <div class="author__avatar">
+                                    <img src="imgs/avatar-3.jpg" alt="avatar-author">
+                                </div>
+                                <div class="author__info">
+                                    <p class="author__info-name">
+                                        Alex Turner
+                                    </p>
+                                    <p class="author__info-orther">
+                                        August 2, 2021
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure class="post card wow animate__fadeInUp" data-wow-duration="1s">
+                        <!-- Thumbnail -->
+                        <a href="blog-detail.html" class="post__thumb">
+                            <img src="imgs/post-thumb-2.jpg" alt="post-img">
+                        </a>
+                        <!-- Content -->
+                        <div class="post__content">
+                            <!-- Tag -->
+                            <div class="tag">Products</div>
+                            <!-- Content Detail -->
+                            <div class="post__content-detail">
+                                <h3 class="heading --h3">
+                                    <a href="blog-detail.html">The Basics about Cryptocurrency</a>
+                                </h3>
+                                <p class="desc">
+                                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+                                    Scelerisque viverra donec diammeo.
+                                </p>
+                            </div>
+                            <!-- Author -->
+                            <div class="author">
+                                <div class="author__avatar">
+                                    <img src="imgs/avatar-3.jpg" alt="avatar-author">
+                                </div>
+                                <div class="author__info">
+                                    <p class="author__info-name">
+                                        Alex Turner
+                                    </p>
+                                    <p class="author__info-orther">
+                                        August 2, 2021
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                    <figure class="post card wow animate__fadeInUp" data-wow-duration="1s">
+                        <!-- Thumbnail -->
+                        <a href="blog-detail.html" class="post__thumb">
+                            <img src="imgs/post-thumb-3.jpg" alt="post-img">
+                        </a>
+                        <!-- Content -->
+                        <div class="post__content">
+                            <!-- Tag -->
+                            <div class="tag">Products</div>
+                            <!-- Content Detail -->
+                            <div class="post__content-detail">
+                                <h3 class="heading --h3">
+                                    <a href="blog-detail.html">The Basics about Cryptocurrency</a>
+                                </h3>
+                                <p class="desc">
+                                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+                                    Scelerisque viverra donec diammeo.
+                                </p>
+                            </div>
+                            <!-- Author -->
+                            <div class="author">
+                                <div class="author__avatar">
+                                    <img src="imgs/avatar-3.jpg" alt="avatar-author">
+                                </div>
+                                <div class="author__info">
+                                    <p class="author__info-name">
+                                        Alex Turner
+                                    </p>
+                                    <p class="author__info-orther">
+                                        August 2, 2021
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Button -->
+                <a href="blog.html" class="btn --gray --center wow animate__fadeInUp" data-wow-duration="1s">
+                    View All Articles
+                </a>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download">
+            <div class="container">
+                <!-- Textbox -->
+                <div class="textbox --horizontal">
+                    <h2 class="heading --h2 wow animate__fadeInLeft" data-wow-duration="1s">
+                        Download our app
+                    </h2>
+                    <p class="desc wow animate__fadeInRight" data-wow-duration="1s">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci amet, amet .
+                    </p>
+                </div>
+
+                <!-- Download List -->
+                <div class="download__list">
+                    <div class="card wow animate__fadeInLeft" data-wow-duration="1s">
+                        <!-- Textbox -->
+                        <div class="textbox">
+                            <h2 class="heading --h2">Download for iOS</h2>
+                            <p class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper
+                                elementum. Felis.
+                            </p>
+                            <a href="http://cfdcircle.vn/" target="_blank" class="btn --main --has-icon">
+                                <svg width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_18067)">
+                                        <path
+                                            d="M2.89196 24.0589C3.90895 25.5229 5.29949 27.5247 7.09357 27.5247V27.5212H7.18498C7.86984 27.4777 8.53946 27.2985 9.15543 26.9938H9.17267C9.95229 26.6126 10.8069 26.4128 11.6735 26.4091C12.5034 26.4182 13.3208 26.6135 14.0664 26.9808H14.0716C14.6946 27.297 15.38 27.4686 16.0774 27.483H16.1792C17.9841 27.456 19.1378 25.9391 20.3451 24.1093C21.1739 22.9142 21.8163 21.5984 22.25 20.2076V20.2006C21.5704 19.9123 20.9494 19.5 20.4184 18.9843C19.832 18.4268 19.3666 17.7531 19.0513 17.0055C18.7361 16.2579 18.578 15.4525 18.5868 14.6403C18.6038 13.5861 18.8836 12.5531 19.4003 11.6361C19.9169 10.7192 20.654 9.94782 21.5438 9.39272C20.9766 8.57776 20.2289 7.90699 19.3599 7.43351C18.4909 6.96002 17.5245 6.6968 16.537 6.66468C16.3724 6.64991 16.2249 6.64209 16.0989 6.64209C15.0096 6.71105 13.9425 6.98387 12.9523 7.4466H12.9316C12.4223 7.69534 11.8757 7.8574 11.3139 7.92618C10.7214 7.86295 10.1448 7.6944 9.61074 7.42836H9.59177C8.73578 7.01905 7.80992 6.7787 6.86419 6.72029H6.78658C5.63538 6.75676 4.51323 7.0933 3.52964 7.69705C2.54603 8.3008 1.73459 9.15114 1.17449 10.1651C0.0454163 12.4 -0.282374 14.9595 0.246607 17.41C0.663483 19.7825 1.5618 22.0428 2.88536 24.0494L2.89196 24.0589Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.1 6.344C11.1889 6.35197 11.2781 6.35546 11.3674 6.35443C12.0995 6.31719 12.8157 6.12494 13.4691 5.79023C14.1225 5.4555 14.6987 4.98583 15.1599 4.41178C16.1822 3.18276 16.6844 1.59846 16.5586 0C15.0035 0.163702 13.5668 0.911959 12.535 2.09555C11.5165 3.26402 11.0004 4.79218 11.1 6.344Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_0_18067">
+                                            <rect width="23" height="28" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                App Store
+                            </a>
+                        </div>
+                        
+                        <!-- Img -->
+                        <div class="card__img">
+                            <img srcset="imgs/download-iphone14-1.png 2x" alt="iphone-14">
+                        </div>
+                    </div>
+
+                    <div class="card wow animate__fadeInRight" data-wow-duration="1s">
+                        <!-- Textbox -->
+                        <div class="textbox">
+                            <h2 class="heading --h2">Download for Android</h2>
+                            <p class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor
+                                semper
+                                elementum. Felis.
+                            </p>
+                            <a href="http://cfdcircle.vn/" target="_blank" class="btn --main --has-icon">
+                                <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_18076)">
+                                        <path
+                                            d="M16.5186 16.5951L13.066 13.136L1.64111 24.7387C1.75032 24.6974 1.85619 24.6478 1.95776 24.5902L16.5186 16.5951Z"
+                                            fill="white" />
+                                        <path
+                                            d="M0.00850522 1.94011C0.0144238 3.35543 0.107148 22.2237 0.116026 23.4134C0.0902982 23.6611 0.125802 23.9113 0.219399 24.142C0.312996 24.3725 0.4618 24.5765 0.652648 24.7357L12.5668 12.6372L0.600367 0.643555C0.393848 0.785546 0.229684 0.981195 0.125431 1.20957C0.0211803 1.43795 -0.0192362 1.69047 0.00850522 1.94011Z"
+                                            fill="white" />
+                                        <path
+                                            d="M17.1585 8.98096L13.561 12.6341L17.1625 16.2417L22.1124 13.5229C22.7043 13.1952 23.3336 12.3599 22.1124 11.6918L17.1585 8.98096Z"
+                                            fill="white" />
+                                        <path
+                                            d="M1.95772 0.659347C1.7996 0.5753 1.62738 0.521278 1.44971 0.5L13.0631 12.1343L16.5156 8.62869L1.95772 0.659347Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_0_18076">
+                                            <rect width="23" height="25" fill="white" transform="translate(0 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                PLAY STORE
+                            </a>
+                        </div>
+                    
+                        <!-- Img -->
+                        <div class="card__img">
+                            <img srcset="imgs/download-iphone14-2.png 2x" alt="iphone-14">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer Top -->
+            <div class="footer__top">
+                <!-- Navigation -->
+                <div class="footer__top-nav">
+                    <a href="./" class="logo wow animate__fadeInUp" data-wow-duration="1s">
+                        <img src="imgs/logo-financeflow.svg" alt="logo-financeflow">
+                    </a>
+
+                    <!-- Socials -->
+                    <ul class="socials wow animate__fadeInUp" data-wow-duration="1s">
+                        <li>
+                            <a href="https://www.facebook.com/cfdcircle" target="_blank">
+                                <img src="imgs/icon-instagram.svg" alt="icon-instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/cfdcircle" target="_blank">
+                                <img src="imgs/icon-facebook.svg" alt="icon-facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/cfdcircle" target="_blank">
+                                <img src="imgs/icon-linkedin.svg" alt="icon-linkedin">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content -->
+                <div class="footer__top-content">
+                    <!-- Menu -->
+                    <div class="menus">
+                        <h3 class="heading --label wow animate__fadeInUp" data-wow-duration="1s">
+                            Menu
+                        </h3>
+                        <div class="menus__wrap">
+                            <ul class="menus__wrap-item wow animate__fadeInLeft" data-wow-duration="1s">
+                                <li><a href="./">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                            </ul>
+                            <ul class="menus__wrap-item wow animate__fadeInRight" data-wow-duration="1s">
+                                <li><a href="tokens.html">Tokens</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Download Card -->
+                    <div class="card --gray wow animate__fadeInUp" data-wow-duration="1s">
+                        <h3 class="heading --label">Download our Application</h3>
+                        <p class="desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer
+                        </p>
+                        <div class="btn-group">
+                            <a href="http://cfdcircle.vn/" target="_blank" class="btn --main --has-icon">
+                                <svg width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_18067)">
+                                        <path
+                                            d="M2.89196 24.0589C3.90895 25.5229 5.29949 27.5247 7.09357 27.5247V27.5212H7.18498C7.86984 27.4777 8.53946 27.2985 9.15543 26.9938H9.17267C9.95229 26.6126 10.8069 26.4128 11.6735 26.4091C12.5034 26.4182 13.3208 26.6135 14.0664 26.9808H14.0716C14.6946 27.297 15.38 27.4686 16.0774 27.483H16.1792C17.9841 27.456 19.1378 25.9391 20.3451 24.1093C21.1739 22.9142 21.8163 21.5984 22.25 20.2076V20.2006C21.5704 19.9123 20.9494 19.5 20.4184 18.9843C19.832 18.4268 19.3666 17.7531 19.0513 17.0055C18.7361 16.2579 18.578 15.4525 18.5868 14.6403C18.6038 13.5861 18.8836 12.5531 19.4003 11.6361C19.9169 10.7192 20.654 9.94782 21.5438 9.39272C20.9766 8.57776 20.2289 7.90699 19.3599 7.43351C18.4909 6.96002 17.5245 6.6968 16.537 6.66468C16.3724 6.64991 16.2249 6.64209 16.0989 6.64209C15.0096 6.71105 13.9425 6.98387 12.9523 7.4466H12.9316C12.4223 7.69534 11.8757 7.8574 11.3139 7.92618C10.7214 7.86295 10.1448 7.6944 9.61074 7.42836H9.59177C8.73578 7.01905 7.80992 6.7787 6.86419 6.72029H6.78658C5.63538 6.75676 4.51323 7.0933 3.52964 7.69705C2.54603 8.3008 1.73459 9.15114 1.17449 10.1651C0.0454163 12.4 -0.282374 14.9595 0.246607 17.41C0.663483 19.7825 1.5618 22.0428 2.88536 24.0494L2.89196 24.0589Z"
+                                            fill="white" />
+                                        <path
+                                            d="M11.1 6.344C11.1889 6.35197 11.2781 6.35546 11.3674 6.35443C12.0995 6.31719 12.8157 6.12494 13.4691 5.79023C14.1225 5.4555 14.6987 4.98583 15.1599 4.41178C16.1822 3.18276 16.6844 1.59846 16.5586 0C15.0035 0.163702 13.5668 0.911959 12.535 2.09555C11.5165 3.26402 11.0004 4.79218 11.1 6.344Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_0_18067">
+                                            <rect width="23" height="28" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                App Store
+                            </a>
+                            <a href="http://cfdcircle.vn/" target="_blank" class="btn --main --has-icon">
+                                <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_18076)">
+                                        <path
+                                            d="M16.5186 16.5951L13.066 13.136L1.64111 24.7387C1.75032 24.6974 1.85619 24.6478 1.95776 24.5902L16.5186 16.5951Z"
+                                            fill="white" />
+                                        <path
+                                            d="M0.00850522 1.94011C0.0144238 3.35543 0.107148 22.2237 0.116026 23.4134C0.0902982 23.6611 0.125802 23.9113 0.219399 24.142C0.312996 24.3725 0.4618 24.5765 0.652648 24.7357L12.5668 12.6372L0.600367 0.643555C0.393848 0.785546 0.229684 0.981195 0.125431 1.20957C0.0211803 1.43795 -0.0192362 1.69047 0.00850522 1.94011Z"
+                                            fill="white" />
+                                        <path
+                                            d="M17.1585 8.98096L13.561 12.6341L17.1625 16.2417L22.1124 13.5229C22.7043 13.1952 23.3336 12.3599 22.1124 11.6918L17.1585 8.98096Z"
+                                            fill="white" />
+                                        <path
+                                            d="M1.95772 0.659347C1.7996 0.5753 1.62738 0.521278 1.44971 0.5L13.0631 12.1343L16.5156 8.62869L1.95772 0.659347Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_0_18076">
+                                            <rect width="23" height="25" fill="white" transform="translate(0 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                Play Store
+                            </a>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__bottom-copyright wow animate__fadeInUp" data-wow-duration="1s">© 2023 CFD Circle, Inc.</p>
+                <div class="footer__bottom-backtotop">
+                    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 18.9375L8 1.875M14.5 7.5625L8 1.0625L1.5 7.5625" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Video -->
+    <div class="popupvideo">
+        <div class="popupvideo__inner">
+            <div class="popupvideo__inner-iframe">
+                <iframe src=""
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="popupvideo__inner-close">
+                <img src="imgs/icon-close.svg" alt="icon-close">
+            </div>
+        </div>
+    </div>
+
+    <!-- JS File -->
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+.pagenotfound-page {
+    // 404 Section
+    .main {
+        padding-top: var(--height-header);
+    }
+    .pagenotfound {
+        position: relative;
+        height: calc(100vh - var(--height-header));
+        min-height: 600px;
+        // overflow: hidden;
+
+        .container {
+            height: 100%;
+        }
+
+        // Wrapper
+        &__wrapper {
+            @include mid(true);
+            height: 100%;
+            max-width: 557px;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        // Blur
+        .blur {
+            img {
+                max-width: initial;
+            }
+        }
+
+        // Title 404
+        &__title {
+            margin-bottom: 15px;
+            @include text(
+                var(--main-color),
+                db,
+                var(--fs-title-404),
+                var(--lh-title-404),
+                var(--ls-title-404),
+                uppercase
+            )
+        }
+
+        // Textbox
+        .textbox {
+            .heading {
+                margin-bottom: 16px;
+            }
+            .btn-group {
+                justify-content: center;
+                margin-top: 40px;
+                gap: 24px;
+            }
+        }
+
+        // Responsive
+        @include xs {
+            padding-top: initial !important;
+
+            // Wrapper
+            &__wrapper {
+                max-width: initial;
+            }
+
+            // Title 404
+            &__title {
+                margin-bottom: 32px;
+            }
+
+            // Textbox
+            .textbox {
+                .btn-group {
+                    flex-direction: column;
+                    gap: 16px;
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+}

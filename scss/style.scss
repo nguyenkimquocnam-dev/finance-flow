@@ -1,0 +1,25 @@
+// ------------------------- Core ------------------------------
+// Base
+@import 'core/reset';
+@import 'core/mixins';
+@import 'core/variales';
+
+// Layouts
+@import 'core/layouts';
+@import 'core/components';
+@import 'core/libs';
+
+// Header, Nav, Footer
+@import 'core/header';
+@import 'core/nav';
+@import 'core/footer';
+
+// ------------------------- Pages ------------------------------
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/blog';
+@import 'pages/blog-detail';
+@import 'pages/pricing';
+@import 'pages/contact';
+@import 'pages/404';
+@import 'pages/tokens';

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | FinanceFlow</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="">
+
+    <!-- Meta tags -->
+    <meta name="title" content="FinanceFlow - CFD Circle" />
+    <meta name="description"
+        content="FinanceFlow là dự án được hoàn thành trong khóa học lập trình front-end Web Responsive tại CFD Circle">
+    <meta name="keywords" content>
+    <meta name="author" content="Nguyễn Kim Quốc Nam">
+
+    <!-- Meta tags Facebook -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="FinanceFlow - CFD Circle | Đào tạo lập trình thực chiến" />
+    <meta property="og:description"
+        content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle" />
+    <meta property="og:url" content="https://cfdcircle.vn" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <meta property="og:image" content="imgs/thumb-facebook.jpg" />
+
+    <!-- Meta tags Twitter -->
+    <meta name="twitter:card" content />
+    <meta name="twitter:site" content />
+    <meta name="twitter:title" content="FinanceFlow" />
+    <meta name="twitter:description"
+        content="FinanceFlow là dự án được hoàn thành trong khoá học lập trình front-end Web Responsive tại CFD Circle" />
+    <meta name="twitter:image" content />
+
+    <!-- CSS Loading -->
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 800;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--blue-dark-color);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .loading.--hide {
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-duration);
+            -webkit-transition: var(--transition-duration);
+            -moz-transition: var(--transition-duration);
+            -o-transition: var(--transition-duration);
+            -ms-transition: var(--transition-duration);
+        }
+
+        .loading .loading__inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 13px;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .loading .loading__inner .loading__inner-progressbar {
+            width: 160px;
+            height: 4px;
+            margin-bottom: 13px;
+            border-radius: 100px;
+            background-color: var(--main-color);
+            overflow: hidden;
+        }
+
+        .loading .loading__inner .loading__inner-progressbar .value {
+            display: block;
+            width: 0%;
+            height: 100%;
+            background-color: var(--white-color);
+        }
+
+        .loading .loading__inner .loading__inner-percent {
+            font-family: db;
+            font-size: 1.6rem;
+            line-height: 0.1rem;
+            letter-spacing: normal;
+        }
+
+        @media screen and (max-width: 767.98px) {
+            .loading .loading__inner .loading__inner-progressbar {
+                width: 129px;
+            }
+        }
+    </style>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+</head>
+
+<body class="pagenotfound-page --disable-scroll scrollbar">
+    <!-- Loading -->
+    <div class="loading">
+        <div class="loading__inner">
+            <div class="loading__inner-progressbar">
+                <span class="value"></span>
+            </div>
+            <span class="loading__inner-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progressbar">
+        <span class="progressbar__inner"></span>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__nav">
+                <a href="./" class="header__nav-logo">
+                    <img src="imgs/logo-financeflow.svg" alt="logo-financeflow">
+                </a>
+                <ul class="menu">
+                    <li><a href="./">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="tokens.html">Tokens</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="header__right">
+                <a href="https://cfdcircle.vn/" target="_blank" class="btn --main --small">
+                    Download App
+                </a>
+                <div class="header__right-humburger --hidden">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <ul class="menu --mobile">
+                <li><a href="./">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="tokens.html">Tokens</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <a href="https://cfdcircle.vn/" target="_blank" class="btn --main --small">
+                Download App
+            </a>
+        </div>
+        <div class="blur --mid">
+            <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="pagenotfound">
+            <div class="container">
+                <div class="pagenotfound__wrapper">
+                    <h1 class="pagenotfound__title wow animate__zoomIn" data-wow-duration="1s">404</h1>
+                    <div class="textbox">
+                        <h2 class="heading --h2 wow animate__fadeInUp" data-wow-duration="1s">Page Not Found</h2>
+                        <p class="desc wow animate__fadeInUp" data-wow-duration="1s">
+                            The page you're looking for can't be found. Double-check the URL and try again. Or click the button below.
+                        </p>
+                        <div class="btn-group">
+                            <a href="pricing.html" class="btn --main wow animate__fadeInLeft" data-wow-duration="1s">View Pricing</a>
+                            <a href="./" class="btn --main --gray wow animate__fadeInRight" data-wow-duration="1s">Go Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blur --mid">
+                <img srcset="imgs/blur-light.png 2x" alt="blur-light">
+            </div>
+        </section>
+    </main>
+
+    <!-- JS File -->
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+</body>
+
+</html>

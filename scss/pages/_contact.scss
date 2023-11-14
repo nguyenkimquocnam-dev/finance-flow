@@ -1,0 +1,218 @@
+.contactpage {
+    // Get In Touch Section
+    .getintouch {
+        .textbox {
+            margin-bottom: 52px;
+
+            .heading {
+                margin-bottom: initial;
+            }
+        }
+
+        &__wrapper {
+            @include grid(12, var(--gap));
+
+            .getintouch {
+
+                // Directly
+                &__direct {
+                    grid-column: 9/13;
+
+                    // Textbox
+                    .textbox {
+                        margin-bottom: 32px;
+
+                        .heading {
+                            margin-bottom: 12px;
+                        }
+                    }
+
+                    // Mail List
+                    .icon-list {
+                        &__item {
+                            gap: 15px;
+
+                            .icon {
+                                width: 38px;
+                                height: 38px;
+                            }
+
+                            .text {
+                                display: block;
+                                word-break: break-word;
+                                color: var(--white-color);
+                            }
+
+                            &:not(:last-child) {
+                                margin-bottom: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Form
+            #getintouch__form {
+                grid-column: 1/9;
+                padding-right: 39px;
+
+                .form-container+.form-group {
+                    margin-bottom: 54px;
+                }
+            }
+        }
+
+        // Responsive
+        @include xs {
+            // Textbox
+            .textbox {
+                margin-bottom: 40px;
+            }
+
+            &__wrapper {
+                display: block;
+
+                // Form
+                #getintouch__form {
+                    padding-right: initial;
+                    margin-bottom: 45px;
+
+                    .form-container+.form-group {
+                        margin-bottom: 32px;
+                    }
+                }
+
+                .getintouch {
+
+                    // Direct
+                    &__direct {
+                        .textbox {
+                            margin-bottom: 34px;
+
+                            .heading {
+                                margin-bottom: 19px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // FAQs Section
+    .faqs {
+        --pd-section: 120px;
+        padding: var(--pd-section) 0;
+
+        // Textbox
+        .textbox {
+            margin-bottom: 80px;
+            text-align: center;
+            .heading {
+                margin-bottom: initial;
+            }
+        }
+
+        .container {
+            @include grid(12, var(--gap));
+        }
+
+        &__wrapper {
+           grid-column: 3/11;
+        }
+
+        // Accordion
+        &__accordion {
+            // Content
+            &-content {
+                cursor: pointer;
+                padding: 32px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+                // Title
+                .title {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    @include text(
+                        var(--white-color),
+                        db,
+                        var(--fs-title-accordion),
+                        var(--lh-title-accordion),
+                        var(--ls-title-accordion)
+                    );
+
+                    // Plus
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        right: 0;
+                        content: "";
+                        display: block;
+                        @include size(27px, 2px);
+                        border-radius: 100px;
+                        background-color: var(--white-color);
+                        @include transition(var(--transition-duration));
+                    }
+
+                    &::after {
+                        @include transform(rotate(90deg))
+                    }
+                }
+
+                 // When Content Active
+                    &.--active {
+                        .title {
+                            &::after {
+                                @include transform(rotate(180deg))
+                            }
+                        }
+                    }
+
+                // Content
+                .content {
+                    height: 0;
+                    overflow: hidden;
+                    @include transition(var(--transition-duration));
+                    // margin-top: 16px;
+                    p {
+                        padding: 16px 43px 0 0;
+                    }
+                }
+            }
+        }
+
+        // Responsive
+        @include xs {
+            padding: 80px 0 106px 0;
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            // Textbox
+            .textbox {
+                margin-bottom: 32px;
+            }
+
+            // Wrapper
+            &__wrapper {
+                grid-column: initial;
+            }
+
+            // Accordion
+            &__accordion {
+                &-content {
+                    padding: 24px 0;
+
+                    // Content
+                    .content {
+                        p {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

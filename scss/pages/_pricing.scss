@@ -1,0 +1,124 @@
+.pricingpage {
+    // Pricing Section
+    .pricing {
+        --pb-section: 225px;
+        padding-bottom: var(--pb-section);
+
+        // Textbox
+        .textbox {
+            max-width: 568px;
+            text-align: center;
+            margin-bottom: 40px;
+
+            .heading {
+                margin-bottom: 16px;
+            }
+        }
+
+        // Icons
+        &__icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 56px;
+
+            // Icon Item
+            &-item {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                .text {
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        // List Card
+        &__list {
+            .card {
+                padding: 48px 30px 42px;
+
+                // Title
+                .title {
+                    margin-bottom: 40px;
+                    .tag {
+                        margin-bottom: 16px;
+                    }
+
+                    .heading {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                // Bottom
+                .bottom {
+                    // Features
+                    &__features {
+                        margin-bottom: 54px;
+                        .heading {
+                            margin-bottom: 12px;
+                        }
+
+                        // Feature List
+                        &-list {
+                            li {
+                                display: flex;
+                                gap: 16px;
+                                align-items: center;
+
+                                &:not(:last-child) {
+                                    margin-bottom: 4px;
+                                }
+
+                                &::before {
+                                    content: "";
+                                    display: block;
+                                    @include size(6px, 6px, true);
+                                    background-color: var(--main-color);
+                                }
+                            }
+                        }
+                    }
+
+                    // Button Contact
+                    .btn {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        // Responsive
+        @include sm {
+            .textbox {
+                max-width: 100%;
+                margin-left: initial;
+                margin-right: initial;
+                text-align: left;
+            }
+            // Icons
+            &__icons {
+                flex-direction: column;
+                justify-content: initial;
+                align-items: flex-start;
+                gap: 38px;
+                margin-bottom: 48px;
+
+                &-item {
+                    gap: 28px;
+                }
+            }
+
+            // List
+            &__list {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        @include xs {
+            --pb-section: 80px;
+        }
+    }
+}

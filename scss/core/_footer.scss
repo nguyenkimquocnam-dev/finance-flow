@@ -1,0 +1,250 @@
+.footer {
+    --pt-footer: 56px;
+    --pb-footer: 33px;
+    padding: var(--pt-footer) 0 var(--pb-footer) 0;
+    background-color: var(--blue-light-color);
+
+    // Footer Top
+    &__top {
+        // Nav
+        &-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            // Logo
+            .logo {
+                display: flex;
+            }
+
+            // Socials
+            .socials {
+                display: flex;
+                gap: 12px;
+                li {
+                    a {
+                        @include size(36px, 36px, true);
+                        @include mid(true);
+                        background-color: var(--gray-light-half-color);
+                        @include transition(var(--transition-duration));
+
+                        // Hover Social
+                        &:hover {
+                            background-color: var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Content
+        &-content {
+            @include grid(12, var(--gap));
+            // display: flex;
+            justify-content: space-between;
+            margin-top: 92px;
+            margin-bottom: 125px;
+
+            // Menu
+            .menus {
+                grid-column: 1/4;
+                .heading {
+                    margin-bottom: 31px;
+                }
+
+                &__wrap {
+                    display: inline-flex;
+                    gap: 117px;
+                    padding-top: 35px;
+                    border-top: 1px solid var(--white-color);
+
+                    &-item {
+                        li {
+                            a {
+                                display: flex;
+                                padding: 10px 0;
+                                @include text(
+                                    var(--white-color),
+                                    dr,
+                                    var(--fs-text-menu-footer),
+                                    var(--lh-text-menu-footer),
+                                    var(--ls-text-menu-footer),
+                                    uppercase
+                                );
+                                @include transition(var(--transition-duration));
+
+                                &:hover {
+                                    opacity: 0.7;
+                                }
+                            }
+                    }
+                    }
+                }
+            }
+
+            // Download Card
+            .card {
+                grid-column: 8/13;
+                padding: 44px 32px 44px 34px;
+
+                .heading {
+                    margin-bottom: 12px;
+                }
+
+                .desc {
+                    margin-bottom: 25px;
+                }
+
+                .btn-group {
+                    gap: 16px;
+                }
+            }
+        }
+    }
+
+    // Footer Bottom
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 31px;
+
+        // Copyright
+        &-copyright {
+            @include text(
+                var(--white-color),
+                dr,
+                var(--fs-body-small),
+                var(--lh-body-small),
+                var(--ls-body-small)
+            )
+        }
+
+        // Backtotop
+        &-backtotop {
+            position: fixed;
+            z-index: 300;
+            bottom: 20px;
+            right: clamp(var(--pd-container), (100% - var(--max-width-container))/2 + var(--pd-container), 9999px);
+            @include mid(true);
+            @include size(50px, 50px, true);
+            background-color: var(--main-color);
+            cursor: pointer;
+            @include transition(var(--transition-duration));
+            @include transform(translateY(100px));
+
+            &.--show {
+                @include transform(translate(0));
+            }
+
+            svg {
+                path {
+                    @include transition(var(--transition-duration));
+                }
+            }
+
+            &:hover {
+                background-color: var(--white-color);
+                svg {
+                    path {
+                        stroke: var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive
+    @include md {
+        &__top {
+            &-content {
+                .menus {
+                    grid-column: 1/5;
+                }
+                .card {
+                    grid-column: 7/13;
+                }
+            }
+        }
+    }
+
+    @include sm {
+        &__top {
+            &-content {
+                .menus {
+                    grid-column: 1/6;
+                }
+        
+                .card {
+                    grid-column: 6/13;
+                    padding: 38px 32px 38px 25px;;
+                }
+            }
+        }
+    }
+
+    @include xs {
+        --pt-footer: 40px;
+        --pb-footer: 57px;
+
+        &__top {
+            &-nav {
+                flex-direction: column;
+                gap: 24px;
+
+                .socials {
+                    gap: 24px;
+                }
+            }
+
+            &-content {
+                grid-template-columns: 1fr;
+                margin-top: 45px;
+                margin-bottom: 32px;
+                gap: 46px;
+
+                .menus,
+                .card {
+                    grid-column: initial;
+                    .heading {
+                        font-size: var(--fs-label-footer);
+                        line-height: var(--lh-label-footer);
+                        letter-spacing: var(--ls-label-footer);
+                    }
+                }
+
+                .menus {
+                    &__wrap {
+                        width: 100%;
+                        padding-top: 32px;
+
+                        &-item {
+                            li a {
+                                padding: 8px 0;
+                            }
+                        }
+                    }
+                }
+
+                .card {
+                    padding: 44px 34px;
+                    .heading {
+                        margin-bottom: 8px;
+                    }
+                    .desc {
+                        margin-bottom: 23px;
+                    }
+                    .btn-group {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            justify-content: center;
+            padding-top: 26px;
+        }
+    }
+}

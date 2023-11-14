@@ -1,0 +1,35 @@
+.nav {
+    @include full-screen(true);
+    z-index: 700;
+    @include mid(true);
+    // padding-top: var(--height-header);
+    background-color: var(--blue-dark-color);
+    opacity: 0;
+    visibility: hidden;
+    @include transition(var(--transition-duration));
+
+    &.--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__inner {
+        width: 100%;
+        padding: 0 45px;
+
+        .btn {
+            width: 100%;
+            margin-top: 21px;
+        }
+    }
+
+    .blur {
+        img {
+            max-width: initial;
+        }
+    }
+
+    // @include sm {
+
+    // }
+}
